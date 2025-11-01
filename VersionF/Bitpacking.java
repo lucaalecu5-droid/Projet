@@ -9,7 +9,7 @@ public abstract class Bitpacking {
     public abstract int get(int i);                        //méthode pour obtenir la valeur à l'index i
 
     public static int bitsNeeded(int[] array) {            //méthode pour calculer le nombre de bits nécessaires pour représenter les valeurs dans le tableau
-        int max = 0;                                       //initialisation de la valeur maximale
+        int max = 1;                                       //initialisation de la valeur maximale
         for (int v : array) max = Math.max(max, v);        //parcours du tableau pour trouver la valeur maximale
         return 32 - Integer.numberOfLeadingZeros(max);     //calcul du nombre de bits nécessaires pour représenter la valeur maximale
     }
