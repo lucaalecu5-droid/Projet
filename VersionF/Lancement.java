@@ -10,12 +10,15 @@ public class Lancement {
             String filePath = args[0];                                        //recuperation du chemin du fichier passe en parametre
             try {
                 String content = Files.readString(Path.of(filePath)).trim();  //lecture du contenu du fichier et suppression des espaces inutiles
-                if (content.isEmpty()) lautredata = new int[0];               //gestion du cas ou le fichier est vide
-
-                String[] parts = content.split("\\s+");                 //division du contenu en parties en utilisant les espaces comme separateurs
-                lautredata = new int[parts.length];                           //initialisation du tableau lautredata avec la taille appropriee
-                for (int i = 0; i < parts.length; i++) {                      //conversion de chaque partie en entier et stockage dans le tableau lautredata
-                    lautredata[i] = Integer.parseInt(parts[i]);
+                if (content.isEmpty()){
+                    lautredata = new int[0];               //gestion du cas ou le fichier est vide
+                } 
+                else {
+                    String[] parts = content.split("\\s+");                 //division du contenu en parties en utilisant les espaces comme separateurs
+                    lautredata = new int[parts.length];                           //initialisation du tableau lautredata avec la taille appropriee
+                    for (int i = 0; i < parts.length; i++) {                      //conversion de chaque partie en entier et stockage dans le tableau lautredata
+                        lautredata[i] = Integer.parseInt(parts[i]);
+                    }
                 }
             } catch (IOException e) {                                         //gestion des erreurs de lecture du fichier
                 System.err.println(" Erreur de lecture du fichier : " + e.getMessage());
