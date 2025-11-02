@@ -1,4 +1,4 @@
-Bonjour, ce projet a été réaliser par alecu luca.
+Bonjour, ce projet a été réalisé par alecu luca.
 
 comment utiliser le code:
 1 récupérer l'entièreté du contenu du dossier VersionF et le mettre dans un dossier a part
